@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>貳壹 The 21th ｜ 報名</title>
+<meta name="theme-color" content="#F0EEE9">
+<meta property="og:title" content="貳壹 The 21th">
+<meta property="og:description" content="2026.08.29 一起慶祝這個 21 歲的夜晚">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cloud:#F0EEE9;       /* Pantone 2026 Cloud Dancer */
+    --paper:#FBFAF7;
+    --ink:#26241F;
+    --muted:#6E6A61;
+    --line:#E2DED4;
+    --gold:#A9895E;        /* 香檳金點綴 */
+    --gold-soft:#C7B393;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans TC",-apple-system,sans-serif;
+    background:var(--cloud);
+    color:var(--ink);
+    line-height:1.85;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .serif{font-family:"Cormorant Garamond",serif}
+
+  /* Hero */
+  .hero{
+    text-align:center;
+    padding:96px 24px 72px;
+    position:relative;
+    overflow:hidden;
+  }
+  /* 主視覺圖(頁首) — 放 keyvisual.jpg 即自動當背景;沒有圖時顯示柔和底色 */
+  .hero.has-kv{color:var(--cloud)}
+  .hero.has-kv .eyebrow,.hero.has-kv .meta{color:#EDE7DA}
+  .hero.has-kv h1,.hero.has-kv .zh,.hero.has-kv .meta strong{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .hero .kv-bg{
+    position:absolute;inset:0;z-index:0;
+    background-size:cover;background-position:center;
+  }
+  .hero .kv-bg::after{content:"";position:absolute;inset:0;background:rgba(30,28,24,.42)}
+  .hero > *{position:relative;z-index:1}
+  .hero .eyebrow{
+    font-size:13px;letter-spacing:.45em;text-transform:uppercase;
+    color:var(--gold);font-weight:400;margin-bottom:28px;
+  }
+  .hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(64px,20vw,150px);
+    font-weight:500;line-height:.92;letter-spacing:.02em;
+    color:var(--ink);
+  }
+  .hero .zh{
+    font-size:clamp(24px,7vw,40px);
+    font-weight:300;letter-spacing:.35em;
+    margin-top:8px;padding-left:.35em;
+  }
+  .hero .rule{
+    width:56px;height:1px;background:var(--gold-soft);
+    margin:36px auto 30px;
+  }
+  .hero .meta{
+    font-size:15px;letter-spacing:.14em;color:var(--muted);
+  }
+  .hero .meta strong{font-weight:500;color:var(--ink)}
+  .hero-btns{margin-top:38px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta{
+    display:inline-block;
+    padding:15px 42px;
+    background:var(--ink);color:var(--cloud);
+    text-decoration:none;font-size:14px;letter-spacing:.22em;
+    border-radius:40px;transition:.35s ease;cursor:pointer;border:1px solid var(--ink);
+  }
+  .cta:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+  .cta-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:15px 32px;background:transparent;color:var(--gold);
+    text-decoration:none;font-size:14px;letter-spacing:.14em;
+    border:1px solid var(--gold-soft);border-radius:40px;transition:.35s ease;cursor:pointer;
+    font-family:inherit;
+  }
+  .cta-ghost:hover{background:var(--gold);color:#fff;border-color:var(--gold);transform:translateY(-2px)}
+  .cta-ghost svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .notice-open{
+    margin-top:22px;font-size:12.5px;letter-spacing:.1em;color:var(--muted);
+  }
+
+  /* Section */
+  section{padding:60px 0}
+  .section-tag{
+    text-align:center;font-size:12px;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:10px;
+  }
+  .section-title{
+    text-align:center;font-family:"Cormorant Garamond",serif;
+    font-size:38px;font-weight:500;margin-bottom:44px;letter-spacing:.06em;
+  }
+
+  /* Info card */
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:12px 34px;
+  }
+  .row{
+    display:flex;gap:20px;align-items:baseline;
+    padding:20px 0;border-bottom:1px solid var(--line);
+  }
+  .row:last-child{border-bottom:none}
+  .row .k{
+    flex:0 0 92px;font-size:14.5px;letter-spacing:.26em;
+    color:var(--gold);font-weight:600;
+  }
+  .row .v{flex:1;font-size:15.5px;color:var(--ink)}
+  .row .v a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+  .row .v .price{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:600;letter-spacing:.02em}
+  .gift{
+    margin-top:26px;text-align:center;
+    padding:22px;border:1px dashed var(--gold-soft);border-radius:14px;
+    background:rgba(199,179,147,.08);
+    font-size:14.5px;letter-spacing:.08em;color:var(--ink);
+  }
+  .gift b{color:var(--gold);font-weight:500}
+
+  /* Highlights 輪播（精簡版） */
+  .compact{padding:38px 0}
+  .compact .section-title{margin-bottom:28px}
+  .carousel{position:relative;max-width:440px;margin:0 auto}
+  .c-viewport{overflow:hidden;border-radius:16px}
+  .track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+  .slide{
+    min-width:100%;box-sizing:border-box;
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    aspect-ratio:16/9;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:16px;
+  }
+  .slide .s-ico{line-height:0;margin-bottom:9px}
+  .slide .s-ico svg{width:38px;height:38px;stroke:var(--gold);fill:none;
+    stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .slide .s-t{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:500;letter-spacing:.06em;color:var(--ink)}
+  .slide .s-z{font-size:15px;font-weight:700;letter-spacing:.3em;margin-top:1px;padding-left:.3em}
+  .slide .s-d{color:var(--muted);font-size:12.5px;letter-spacing:.04em;margin:9px auto 0;max-width:320px;line-height:1.7}
+  .c-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+    width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+    background:rgba(251,250,247,.9);color:var(--ink);font-size:18px;line-height:1;
+    cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;
+  }
+  .c-arrow:hover{background:var(--ink);color:var(--cloud);border-color:var(--ink)}
+  .c-arrow.prev{left:6px}
+  .c-arrow.next{right:6px}
+  .dots{display:flex;gap:8px;justify-content:center;margin-top:18px}
+  .dot{width:7px;height:7px;padding:0;border:none;border-radius:50%;background:var(--line);cursor:pointer;transition:.3s}
+  .dot.active{background:var(--gold);width:20px;border-radius:4px}
+
+  /* Payment */
+  .pay{
+    background:var(--ink);color:var(--cloud);border-radius:18px;
+    padding:38px 34px;text-align:center;
+  }
+  .pay .label{font-size:12px;letter-spacing:.35em;color:var(--gold-soft);text-transform:uppercase}
+  .pay .amt{font-family:"Cormorant Garamond",serif;font-size:32px;font-weight:600;margin:4px 0 16px;letter-spacing:.03em}
+  .pay .bank{font-size:15px;letter-spacing:.1em;line-height:2}
+  .pay .acct{
+    font-family:"Cormorant Garamond",serif;font-size:30px;letter-spacing:.12em;
+    color:#fff;margin-top:2px;
+  }
+  .pay .hint{font-size:12.5px;color:#B7B2A6;margin-top:16px;letter-spacing:.06em}
+  .pay-qr{margin-top:26px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);text-align:center}
+  .pay-qr img{width:180px;height:180px;background:#fff;padding:12px;border-radius:14px;display:block;margin:0 auto}
+  .qr-ph{width:180px;height:180px;margin:0 auto;border-radius:14px;background:#fff;
+    flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:16px}
+  .qr-ph span{color:var(--ink);font-size:14px;letter-spacing:.06em}
+  .qr-ph small{color:var(--muted);font-size:11px;line-height:1.6}
+  .qr-ph code{background:rgba(169,137,94,.14);color:var(--gold);padding:1px 6px;border-radius:5px;font-size:11px}
+  .pay-qr .qr-cap{font-size:12.5px;color:#C7C2B6;line-height:1.85;margin:15px 0 18px;letter-spacing:.04em}
+  .rc-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 30px;background:var(--gold);color:#fff;text-decoration:none;
+    font-size:14px;letter-spacing:.12em;border-radius:40px;transition:.3s;
+  }
+  .rc-btn:hover{background:#fff;color:var(--ink)}
+  .rc-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .pay-contact{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+  .pay-contact .pc-t{font-size:12.5px;color:#C7C2B6;letter-spacing:.06em;margin-bottom:13px}
+  .pc-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .pc-links a{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:40px;
+    font-size:13px;letter-spacing:.05em;text-decoration:none;transition:.3s}
+  .pc-line{background:#06C755;color:#fff}
+  .pc-line:hover{opacity:.85}
+  .pc-mail{background:transparent;color:var(--cloud);border:1px solid rgba(255,255,255,.32)}
+  .pc-mail:hover{background:#fff;color:var(--ink)}
+  .pc-links svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  /* LINE 群組按鈕（成功畫面 / 頁尾） */
+  .line-group{display:inline-flex;align-items:center;gap:9px;padding:14px 32px;background:#06C755;color:#fff;
+    text-decoration:none;font-size:14px;letter-spacing:.1em;border-radius:40px;transition:.3s}
+  .line-group:hover{opacity:.88;transform:translateY(-2px)}
+  .line-group svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .success-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+
+  /* Notes */
+  .notes{list-style:none}
+  .notes li{
+    position:relative;padding:12px 0 12px 26px;
+    font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);
+    letter-spacing:.03em;
+  }
+  .notes li:last-child{border-bottom:none}
+  .notes li::before{
+    content:"";position:absolute;left:2px;top:20px;
+    width:6px;height:6px;border-radius:50%;background:var(--gold-soft);
+  }
+  .notes .privacy{color:var(--ink);font-weight:400}
+
+  /* Poster / 主視覺區 */
+  .poster-frame{
+    border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .poster-frame img{width:100%;display:block}
+  .poster-ph{
+    aspect-ratio:3/4;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:12px;
+    background:
+      repeating-linear-gradient(45deg,transparent,transparent 14px,rgba(199,179,147,.10) 14px,rgba(199,179,147,.10) 28px),
+      var(--paper);
+    color:var(--muted);text-align:center;padding:30px;
+  }
+  .poster-ph .ico{font-size:38px;opacity:.6}
+  .poster-ph .t{font-size:15px;letter-spacing:.1em;color:var(--ink)}
+  .poster-ph .s{font-size:12.5px;letter-spacing:.05em}
+  .poster-ph code{
+    font-family:"Cormorant Garamond",serif;font-size:16px;
+    background:rgba(169,137,94,.12);color:var(--gold);
+    padding:2px 10px;border-radius:6px;
+  }
+
+  /* Form (自訂欄位) */
+  .rsvp{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:38px 34px;
+  }
+  .field{margin-bottom:24px}
+  .field > label{
+    display:block;font-size:13.5px;letter-spacing:.08em;color:var(--ink);
+    margin-bottom:9px;font-weight:400;
+  }
+  .field > label .req{color:var(--gold);margin-left:4px}
+  .field .desc{font-size:12px;color:var(--muted);margin:-3px 0 9px}
+  .field input[type=text],.field input[type=tel],.field input[type=date],.field textarea{
+    width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;
+    background:#fff;font-family:inherit;font-size:15px;color:var(--ink);
+    font-weight:300;transition:.2s;
+  }
+  .field input:focus,.field textarea:focus{
+    outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(169,137,94,.12);
+  }
+  .field textarea{resize:vertical;min-height:88px;line-height:1.7}
+  .agree{
+    display:flex;gap:12px;align-items:flex-start;padding:16px 18px;
+    border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;
+  }
+  .agree input{margin-top:3px;width:18px;height:18px;accent-color:var(--gold);flex:0 0 auto}
+  .agree span{font-size:13.5px;color:var(--ink);line-height:1.7}
+  .inline-link{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft);font-weight:400}
+  .inline-link:hover{color:var(--ink)}
+  .submit-btn{
+    width:100%;padding:17px;background:var(--ink);color:var(--cloud);border:none;
+    border-radius:40px;font-size:15px;letter-spacing:.22em;cursor:pointer;
+    font-family:inherit;transition:.35s;margin-top:6px;
+  }
+  .submit-btn:hover{background:var(--gold)}
+  .err{color:#b5462f;font-size:12.5px;margin-top:6px;display:none;letter-spacing:.03em}
+  .field.invalid .err{display:block}
+  .field.invalid input,.field.invalid textarea{border-color:#b5462f}
+  .success{display:none;text-align:center;padding:64px 30px}
+  .success.show{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .success .mk{
+    width:64px;height:64px;border-radius:50%;background:var(--gold);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 22px;
+  }
+  .success h3{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:500;margin-bottom:12px}
+  .success p{font-size:14.5px;color:var(--muted);line-height:1.9}
+  .form-fallback{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
+  .form-fallback a{color:var(--gold)}
+
+  footer{
+    text-align:center;padding:56px 24px 70px;color:var(--muted);
+  }
+  footer .fs{font-family:"Cormorant Garamond",serif;font-size:30px;letter-spacing:.1em;color:var(--ink)}
+  footer .fz{font-size:12px;letter-spacing:.3em;margin-top:8px}
+
+  @media(max-width:600px){
+    .wrap{padding:0 18px}
+    .hero{padding:68px 18px 52px}
+    .hero .eyebrow{letter-spacing:.3em;font-size:12px}
+    .hero .meta{font-size:13.5px;letter-spacing:.08em}
+    section{padding:46px 0}
+    .section-title{font-size:32px;margin-bottom:34px}
+    .card,.pay{padding-left:20px;padding-right:20px}
+    .row{flex-direction:column;gap:4px;padding:16px 0}
+    .row .k{flex:none;letter-spacing:.22em}
+    .rsvp{padding:26px 20px}
+    /* 16px 以上可避免 iOS 聚焦時自動放大 */
+    .field input[type=text],.field input[type=tel],.field input[type=date],.field textarea{font-size:16px}
+    .pay .acct{font-size:23px;letter-spacing:.04em;word-break:break-all}
+    .success p br{display:none}
+  }
+  @media(max-width:600px){
+    .slide .s-ico svg{width:44px;height:44px}
+    .slide .s-t{font-size:28px}
+    .slide .s-z{font-size:16px}
+    .c-arrow{width:36px;height:36px;font-size:18px}
+  }
+  @media(max-width:360px){
+    .pay .acct{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero" id="hero">
+    <div class="kv-bg" id="kvBg"></div>
+    <div class="eyebrow">You&rsquo;re Invited</div>
+    <h1 class="serif">21<span style="font-size:.5em;vertical-align:.35em">th</span></h1>
+    <div class="zh serif">貳壹</div>
+    <div class="rule"></div>
+    <p class="meta"><strong>2026.08.29</strong> ｜ SAT ｜ <strong>18:00 – 20:00</strong></p>
+    <div class="hero-btns">
+      <a class="cta" href="#form">立即報名 →</a>
+      <button type="button" class="cta-ghost js-addcal" id="addCal">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="12" y1="12.5" x2="12" y2="17.5"/><line x1="9.5" y1="15" x2="14.5" y2="15"/></svg>
+        加入行事曆
+      </button>
+    </div>
+    <p class="notice-open">表單若未關閉即尚有空位，歡迎踴躍報名</p>
+  </header>
+
+  <div class="wrap">
+
+    <section>
+      <div class="section-tag">Details</div>
+      <h2 class="section-title">活動資訊</h2>
+      <div class="card">
+        <div class="row"><div class="k">日 期</div><div class="v">2026 年 8 月 29 日（六）</div></div>
+        <div class="row"><div class="k">時 間</div><div class="v">18:00 – 20:00</div></div>
+        <div class="row"><div class="k">地 點</div><div class="v"><strong style="font-weight:600;font-size:16px">H&amp;D 客家小館</strong><br><a href="https://maps.app.goo.gl/H4toP7o71WCaDExs7" target="_blank" rel="noopener">新北市新莊區中隆里中港路 618-1 號 →</a></div></div>
+        <div class="row"><div class="k">內 容</div><div class="v">佳餚饗宴 · 抽獎 · Q&amp;A 環節 · 切蛋糕 · 拍立得合照</div></div>
+        <div class="row"><div class="k">費 用</div><div class="v">NTD 1,314<br><span style="color:var(--muted);font-size:13px">需提前匯款並備註真實姓名，附上匯款明細以便核實</span></div></div>
+      </div>
+      <div class="gift">限額加碼 ── 報名即送 <b>［貳壹 The 21th 專屬紀念品］</b> 乙份</div>
+    </section>
+
+    <section class="compact">
+      <div class="section-tag">Highlights</div>
+      <h2 class="section-title">當天亮點</h2>
+      <div class="carousel" id="carousel">
+        <div class="c-viewport">
+          <div class="track" id="track">
+            <div class="slide">
+              <div class="s-ico"><svg viewBox="0 0 24 24"><path d="M3 10.5h18"/><path d="M4 10.5a8 8 0 0 0 16 0"/><path d="M12 4.6c1.8 0 2.6 1.2 2.6 2.6"/><path d="M9 4.2c1 .4 1.4 1.2 1.2 2.3"/></svg></div>
+              <div class="s-t serif">Feast</div><div class="s-z serif">佳餚饗宴</div><div class="s-d">精緻桌菜包廂，與三五好友把酒言歡、盡興享用</div>
+            </div>
+            <div class="slide">
+              <div class="s-ico"><svg viewBox="0 0 24 24"><polyline points="20 12 20 21 4 21 4 12"/><rect x="2.5" y="7.5" width="19" height="4.5"/><line x1="12" y1="21" x2="12" y2="7.5"/><path d="M12 7.5H7.8a2.4 2.4 0 0 1 0-4.8C11 2.7 12 7.5 12 7.5z"/><path d="M12 7.5h4.2a2.4 2.4 0 0 0 0-4.8C13 2.7 12 7.5 12 7.5z"/></svg></div>
+              <div class="s-t serif">Lucky Draw</div><div class="s-z serif">抽獎</div><div class="s-d">現場準備多份好禮，人人都有機會把驚喜帶回家</div>
+            </div>
+            <div class="slide">
+              <div class="s-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.8 2.8 0 0 1 5.3 1c0 1.9-2.8 2.5-2.8 2.5"/><line x1="12" y1="16.8" x2="12.01" y2="16.8"/></svg></div>
+              <div class="s-t serif">Q&amp;A</div><div class="s-z serif">問答環節</div><div class="s-d">入座時發放小紙條，匿名寫下你的問題或想對貴一說的話，最後以隨機抽取的方式抽出回答</div>
+            </div>
+            <div class="slide">
+              <div class="s-ico"><svg viewBox="0 0 24 24"><path d="M4 20.5h16"/><path d="M5.5 20.5v-7a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v7"/><path d="M4.5 15.2c1.1 0 1.1 1.1 2.2 1.1s1.1-1.1 2.2-1.1 1.1 1.1 2.2 1.1 1.1-1.1 2.2-1.1 1.1 1.1 2.2 1.1 1.1-1.1 2.2-1.1"/><line x1="12" y1="5" x2="12" y2="8.5"/><circle cx="12" cy="4" r="0.6"/></svg></div>
+              <div class="s-t serif">Cake</div><div class="s-z serif">切蛋糕</div><div class="s-d">一起點上蠟燭、唱生日歌，共享這一刻的甜蜜</div>
+            </div>
+            <div class="slide">
+              <div class="s-ico"><svg viewBox="0 0 24 24"><path d="M22 18.5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h3l1.8-2.6h6.4L19 7.5h1a2 2 0 0 1 2 2z"/><circle cx="12" cy="13.5" r="3.6"/></svg></div>
+              <div class="s-t serif">Photo</div><div class="s-z serif">留影紀念</div><div class="s-d">拍立得合照即拍即得，留下本次活動的美好回憶</div>
+            </div>
+          </div>
+        </div>
+        <button class="c-arrow prev" id="cPrev" aria-label="上一張">‹</button>
+        <button class="c-arrow next" id="cNext" aria-label="下一張">›</button>
+        <div class="dots" id="dots"></div>
+      </div>
+    </section>
+
+    <section id="form">
+      <div class="section-tag">Register</div>
+      <h2 class="section-title">填寫報名表</h2>
+
+      <form id="rsvp" class="rsvp" method="POST" target="hidden_iframe" novalidate
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfgsFhtUYI5AGFgNWTdpsD5e2vi3vp6Vj45eSqS23TuPxHqkA/formResponse">
+
+        <div class="field" data-req>
+          <label>真實姓名全名<span class="req">*</span></label>
+          <input type="text" name="entry.1986090163" autocomplete="name" placeholder="請填寫全名">
+          <div class="err">請填寫真實姓名</div>
+        </div>
+
+        <div class="field" data-req>
+          <label>生日<span class="req">*</span></label>
+          <input type="date" id="birth" min="1920-01-01" max="2020-12-31">
+          <div class="err">請選擇生日</div>
+        </div>
+
+        <div class="field" data-req>
+          <label>聯絡電話<span class="req">*</span></label>
+          <input type="tel" name="entry.1891935056" autocomplete="tel" inputmode="numeric" placeholder="09xx-xxx-xxx">
+          <div class="err">請填寫聯絡電話</div>
+        </div>
+
+        <div class="field" data-req>
+          <label>身分證字號<span class="req">*</span></label>
+          <input type="text" name="entry.805627938" autocomplete="off" placeholder="A123456789">
+          <div class="desc">僅用於保險投保，不會外洩或用於他處</div>
+          <div class="err">請填寫身分證字號</div>
+        </div>
+
+        <div class="field">
+          <label>飲食習慣、需特殊協助者，請備註</label>
+          <textarea name="entry.426466099" placeholder="例：素食、對海鮮過敏、行動需協助…（沒有可留白）"></textarea>
+        </div>
+
+        <div class="field">
+          <label>想對貴一說的話？</label>
+          <textarea name="entry.1033668658" placeholder="留幾句話給壽星吧 🎂"></textarea>
+        </div>
+
+        <div class="field" data-req id="agreeField">
+          <label class="agree">
+            <input type="checkbox" id="agree">
+            <span>我已詳閱上述<a href="#notes" class="inline-link" onclick="event.stopPropagation()">「活動說明與注意事項」</a>，並同意以上內容。</span>
+          </label>
+          <input type="hidden" name="entry.688058078" value="是">
+          <div class="err">請先勾選同意才能報名</div>
+        </div>
+
+        <!-- 生日拆成 年/月/日 送給 Google 表單 -->
+        <input type="hidden" name="entry.1996369261_year"  id="b_year">
+        <input type="hidden" name="entry.1996369261_month" id="b_month">
+        <input type="hidden" name="entry.1996369261_day"   id="b_day">
+        <!-- Google 表單多頁提交參數 -->
+        <input type="hidden" name="fvv" value="1">
+        <input type="hidden" name="pageHistory" value="0,1">
+
+        <button type="submit" class="submit-btn">送出報名 →</button>
+        <p class="form-fallback">想改用原本的 Google 表單？<a href="https://forms.gle/9ADoqpAf8Yvdpkap9" target="_blank" rel="noopener">點此開啟 →</a></p>
+      </form>
+
+      <div class="success" id="success">
+        <div class="mk">✓</div>
+        <h3 class="serif">感謝您的報名</h3>
+        <p>期待 <strong>8/29</strong> 與你相聚！<br>記得加入本次生日會 LINE 群組，即時接收活動通知與最新消息</p>
+        <div class="success-btns">
+          <button type="button" class="cta-ghost js-addcal">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="12" y1="12.5" x2="12" y2="17.5"/><line x1="9.5" y1="15" x2="14.5" y2="15"/></svg>
+            加入行事曆
+          </button>
+          <a class="line-group" href="https://line.me/ti/g/p9Z-_crwrt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M21 11c0-4.4-4-8-9-8s-9 3.6-9 8c0 3.9 3.2 7.2 7.5 7.9.9.2.8.6.6 1.4l-.2 1c-.1.5.4.9.9.6C16 20 21 16.5 21 11z"/></svg>
+            加入 LINE 群組
+          </a>
+        </div>
+        <p style="font-size:12.5px;margin-top:16px">別忘了完成匯款 NTD 1,314 並傳送明細核實 · 我們 8/29 見！</p>
+      </div>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none" title="submit target"></iframe>
+    </section>
+
+    <section>
+      <div class="section-tag">Payment</div>
+      <h2 class="section-title">匯款資訊</h2>
+      <div class="pay">
+        <div class="label">Amount</div>
+        <div class="amt">NTD 1,314</div>
+        <div class="bank">台新銀行（812）</div>
+        <div class="acct">2888-1021-443027</div>
+        <div class="hint">完成匯款後，請私訊匯款明細以便核實 · 備註真實姓名</div>
+
+        <div class="pay-qr">
+          <img src="richart_qr.png" alt="Richart 轉帳 QR Code"
+               onerror="this.style.display='none';document.getElementById('qrPh').style.display='flex'">
+          <div id="qrPh" class="qr-ph" style="display:none">
+            <span>QR Code 位置</span>
+            <small>把你的 QR 圖存成 <code>richart_qr.png</code><br>放進本資料夾即自動顯示</small>
+          </div>
+          <p class="qr-cap">用手機掃描上方 QR Code，或點下方按鈕<br>Richart App 用戶可直接跳轉、自動帶入帳號</p>
+          <a class="rc-btn" href="https://richart.tw/TSDIB_RichartWeb/RC04/RC040300?token=8D0948802F7CAEB7DF6CB7D650657316" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><line x1="10" y1="18.5" x2="14" y2="18.5"/></svg>
+            用 Richart App 轉帳 →
+          </a>
+        </div>
+
+        <div class="pay-contact">
+          <div class="pc-t">完成匯款後，請將匯款明細傳送給我們核實</div>
+          <div class="pc-links">
+            <a class="pc-line" href="https://lin.ee/W6SzWow" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M21 11c0-4.4-4-8-9-8s-9 3.6-9 8c0 3.9 3.2 7.2 7.5 7.9.9.2.8.6.6 1.4l-.2 1c-.1.5.4.9.9.6C16 20 21 16.5 21 11z"/></svg>
+              官方 LINE @493zoevi
+            </a>
+            <a class="pc-mail" href="mailto:gykevinh97@gmail.com">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 12.5l8.5-6"/></svg>
+              E-mail
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes">
+      <div class="section-tag">Please Note</div>
+      <h2 class="section-title">注意事項</h2>
+      <ul class="notes">
+        <li class="privacy">填寫之個人資料僅用於保險投保，不會外洩或用於他處</li>
+        <li>若有攜伴，請其各自填寫一份表單</li>
+        <li>報名繳款後若無法如期參加，請於活動前 15 天告知，可全額退款</li>
+        <li>退款產生之跨行手續費將由退款金額中扣除</li>
+        <li>當天因個人因素未準時出席者不予退款，但會將專屬紀念品郵寄到府</li>
+        <li>若遇非人為不可控因素取消活動，將全額退款或轉移他處進行</li>
+        <li>主辦單位保留隨時修改、變更、暫停或終止本活動內容之權利，並以公告為準</li>
+        <li>若有其他未盡事宜，悉依主辦單位相關規定或解釋</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="fs serif">貳壹 · The 21th</div>
+    <div class="fz">2026 · SEE YOU THERE</div>
+  </footer>
+
+<script>
+  // 若同資料夾有 keyvisual.jpg,自動當頁首主視覺背景
+  (function(){
+    var img=new Image();
+    img.onload=function(){
+      var bg=document.getElementById('kvBg');
+      bg.style.backgroundImage="url('keyvisual.jpg')";
+      document.getElementById('hero').classList.add('has-kv');
+    };
+    img.src='keyvisual.jpg';
+  })();
+
+  // 加入行事曆：產生 .ics（Apple / Google / Outlook 皆可）
+  (function(){
+    var btns=document.querySelectorAll('.js-addcal');
+    if(!btns.length) return;
+    function download(){
+      var ics=[
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The 21th//RSVP//TW','CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        'UID:the21th-20260829@party',
+        'DTSTAMP:20260724T000000Z',
+        'DTSTART:20260829T100000Z',   // 台北 18:00
+        'DTEND:20260829T120000Z',     // 台北 20:00
+        'SUMMARY:貳壹 The 21th 生日會',
+        'LOCATION:H&D客家小館 新北市新莊區中隆里中港路618-1號',
+        'DESCRIPTION:美食 · 抽獎 · Q&A · 切蛋糕 · 拍立得合照\\n費用 NTD 1314（台新銀行 812 · 28881021443027）',
+        'END:VEVENT','END:VCALENDAR'
+      ].join('\r\n');
+      var blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url; a.download='貳壹The21th.ics';
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(url);},1500);
+    }
+    btns.forEach(function(b){b.addEventListener('click',download);});
+  })();
+
+  // 當天亮點：自動輪播（可點箭頭、圓點、手機滑動）
+  (function(){
+    var track=document.getElementById('track');
+    if(!track) return;
+    var slides=track.children.length, i=0, timer;
+    var dots=document.getElementById('dots');
+    for(var d=0;d<slides;d++){
+      var b=document.createElement('button');
+      b.className='dot'+(d===0?' active':'');
+      b.setAttribute('aria-label','第'+(d+1)+'張');
+      (function(n){b.addEventListener('click',function(){go(n);reset();});})(d);
+      dots.appendChild(b);
+    }
+    function go(n){
+      i=(n+slides)%slides;
+      track.style.transform='translateX(-'+(i*100)+'%)';
+      var ds=dots.children;
+      for(var k=0;k<ds.length;k++) ds[k].classList.toggle('active',k===i);
+    }
+    function next(){go(i+1);}
+    function reset(){clearInterval(timer);timer=setInterval(next,3500);}
+    document.getElementById('cNext').addEventListener('click',function(){go(i+1);reset();});
+    document.getElementById('cPrev').addEventListener('click',function(){go(i-1);reset();});
+    var car=document.getElementById('carousel');
+    car.addEventListener('mouseenter',function(){clearInterval(timer);});
+    car.addEventListener('mouseleave',reset);
+    // 手機滑動
+    var x0=null;
+    car.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+    car.addEventListener('touchend',function(e){
+      if(x0===null) return;
+      var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>40){ go(dx<0?i+1:i-1); reset(); }
+      x0=null;
+    });
+    reset();
+  })();
+
+  // 報名表：前端驗證 + 生日拆解 + 送出成功提示
+  (function(){
+    var form=document.getElementById('rsvp');
+    if(!form) return;
+    var birth=document.getElementById('birth');
+    var submitted=false;
+
+    // 使用者一動就清除該欄錯誤狀態
+    form.addEventListener('input',function(e){
+      var f=e.target.closest('.field'); if(f) f.classList.remove('invalid');
+    });
+    form.addEventListener('change',function(e){
+      var f=e.target.closest('.field'); if(f) f.classList.remove('invalid');
+    });
+
+    form.addEventListener('submit',function(e){
+      var ok=true, firstBad=null;
+      form.querySelectorAll('.field[data-req]').forEach(function(f){
+        var chk=f.querySelector('input[type=checkbox]');
+        var dt =f.querySelector('input[type=date]');
+        var inp=f.querySelector('input[type=text],input[type=tel],textarea');
+        var bad=false;
+        if(chk){ bad=!chk.checked; }
+        else if(dt){ bad=!dt.value; }
+        else if(inp){ bad=!inp.value.trim(); }
+        if(bad){ f.classList.add('invalid'); ok=false; if(!firstBad) firstBad=f; }
+      });
+      if(!ok){
+        e.preventDefault();
+        if(firstBad) firstBad.scrollIntoView({behavior:'smooth',block:'center'});
+        return;
+      }
+      // 生日 yyyy-mm-dd → 年/月/日
+      if(birth.value){
+        var p=birth.value.split('-');
+        document.getElementById('b_year').value  = p[0];
+        document.getElementById('b_month').value = parseInt(p[1],10);
+        document.getElementById('b_day').value   = parseInt(p[2],10);
+      }
+      submitted=true;
+    });
+
+    // 送到隱藏 iframe 後顯示成功畫面
+    document.getElementById('hidden_iframe').addEventListener('load',function(){
+      if(!submitted) return;
+      form.style.display='none';
+      var s=document.getElementById('success');
+      s.classList.add('show');
+      s.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  })();
+</script>
+</body>
+</html>
