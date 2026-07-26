@@ -38,7 +38,9 @@
   /* Hero */
   .hero{
     text-align:center;
-    padding:96px 24px 72px;
+    min-height:92vh;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:120px 24px 58px;
     position:relative;
     overflow:hidden;
   }
@@ -46,10 +48,10 @@
   .hero.has-kv{color:var(--cloud)}
   .hero.has-kv .eyebrow,.hero.has-kv .meta{color:#EDE7DA}
   .hero.has-kv .notice-open{color:#E9E3D7;text-shadow:0 1px 10px rgba(0,0,0,.45)}
-  .hero.has-kv h1,.hero.has-kv .zh,.hero.has-kv .meta strong{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.5)}
+  .hero.has-kv .hero-title,.hero.has-kv .hero-sub,.hero.has-kv .meta strong{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.55)}
   .hero .kv-bg{
     position:absolute;inset:0;z-index:0;
-    background-size:cover;background-position:center 22%;
+    background-size:cover;background-position:center 18%;
   }
   .hero .kv-bg::after{content:"";position:absolute;inset:0;
     background:linear-gradient(rgba(26,24,20,.58),rgba(26,24,20,.48) 45%,rgba(26,24,20,.66))}
@@ -58,16 +60,16 @@
     font-size:13px;letter-spacing:.45em;text-transform:uppercase;
     color:var(--gold);font-weight:400;margin-bottom:28px;
   }
-  .hero h1{
+  .hero-title{
     font-family:"Cormorant Garamond",serif;
-    font-size:clamp(64px,20vw,150px);
-    font-weight:500;line-height:.92;letter-spacing:.02em;
+    font-size:clamp(40px,10.5vw,74px);
+    font-weight:500;line-height:1.05;letter-spacing:.05em;
     color:var(--ink);
   }
-  .hero .zh{
-    font-size:clamp(24px,7vw,40px);
-    font-weight:300;letter-spacing:.35em;
-    margin-top:8px;padding-left:.35em;
+  .hero-sub{
+    font-size:clamp(15px,4.4vw,19px);
+    font-weight:400;letter-spacing:.14em;
+    margin-top:14px;color:var(--muted);
   }
   .hero .rule{
     width:56px;height:1px;background:var(--gold-soft);
@@ -95,6 +97,11 @@
   }
   .cta-ghost:hover{background:var(--gold);color:#fff;border-color:var(--gold);transform:translateY(-2px)}
   .cta-ghost svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  /* 頁首按鈕改亮金色，避免被底圖吃掉 */
+  .hero .cta{background:#C7A469;border-color:#C7A469;color:#2B2620;font-weight:500}
+  .hero .cta:hover{background:#DBBC82;border-color:#DBBC82;color:#241F19}
+  .hero .cta-ghost{background:rgba(216,188,134,.22);border:1.5px solid #E6CD95;color:#F6E8C2;font-weight:500}
+  .hero .cta-ghost:hover{background:#E6CD95;color:#2B2620}
   .notice-open{
     margin-top:22px;font-size:12.5px;letter-spacing:.1em;color:var(--muted);
   }
@@ -108,6 +115,10 @@
   .section-title{
     text-align:center;font-family:"Cormorant Garamond",serif;
     font-size:38px;font-weight:500;margin-bottom:44px;letter-spacing:.06em;
+  }
+  .section-intro{
+    max-width:500px;margin:-26px auto 34px;text-align:center;
+    color:var(--muted);font-size:14.5px;line-height:1.9;letter-spacing:.03em;
   }
 
   /* Info card */
@@ -311,7 +322,7 @@
 
   @media(max-width:600px){
     .wrap{padding:0 18px}
-    .hero{padding:68px 18px 52px}
+    .hero{padding:96px 18px 46px;min-height:88vh}
     .hero .eyebrow{letter-spacing:.3em;font-size:12px}
     .hero .meta{font-size:13.5px;letter-spacing:.08em}
     section{padding:46px 0}
@@ -341,8 +352,8 @@
   <header class="hero" id="hero">
     <div class="kv-bg" id="kvBg"></div>
     <div class="eyebrow">You&rsquo;re Invited</div>
-    <h1 class="serif">21<span style="font-size:.5em;vertical-align:.35em">th</span></h1>
-    <div class="zh serif">貳壹</div>
+    <h1 class="hero-title serif">貳壹 The 21th</h1>
+    <div class="hero-sub">許貴一生日會 · Birthday Party</div>
     <div class="rule"></div>
     <p class="meta"><strong>2026.08.29</strong> ｜ SAT ｜ <strong>18:00 – 20:00</strong></p>
     <div class="hero-btns">
@@ -360,6 +371,7 @@
     <section>
       <div class="section-tag">Details</div>
       <h2 class="section-title">活動資訊</h2>
+      <p class="section-intro">許貴一即將迎來 21 歲！<br>誠摯邀請你一同用餐、切蛋糕、抽獎同樂，<br>為這個特別的夜晚留下美好回憶。</p>
       <div class="card">
         <div class="row"><div class="k">日 期</div><div class="v">2026 年 8 月 29 日（六）</div></div>
         <div class="row"><div class="k">時 間</div><div class="v">18:00 – 20:00</div></div>
