@@ -45,12 +45,13 @@
   /* 主視覺圖(頁首) — 放 keyvisual.jpg 即自動當背景;沒有圖時顯示柔和底色 */
   .hero.has-kv{color:var(--cloud)}
   .hero.has-kv .eyebrow,.hero.has-kv .meta{color:#EDE7DA}
-  .hero.has-kv h1,.hero.has-kv .zh,.hero.has-kv .meta strong{color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+  .hero.has-kv h1,.hero.has-kv .zh,.hero.has-kv .meta strong{color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.5)}
   .hero .kv-bg{
     position:absolute;inset:0;z-index:0;
     background-size:cover;background-position:center 22%;
   }
-  .hero .kv-bg::after{content:"";position:absolute;inset:0;background:rgba(30,28,24,.42)}
+  .hero .kv-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(rgba(26,24,20,.58),rgba(26,24,20,.48) 45%,rgba(26,24,20,.66))}
   .hero > *{position:relative;z-index:1}
   .hero .eyebrow{
     font-size:13px;letter-spacing:.45em;text-transform:uppercase;
@@ -344,11 +345,11 @@
     <div class="rule"></div>
     <p class="meta"><strong>2026.08.29</strong> ｜ SAT ｜ <strong>18:00 – 20:00</strong></p>
     <div class="hero-btns">
-      <a class="cta" href="#form">立即報名 →</a>
       <button type="button" class="cta-ghost js-addcal" id="addCal">
         <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="12" y1="12.5" x2="12" y2="17.5"/><line x1="9.5" y1="15" x2="14.5" y2="15"/></svg>
         加入行事曆
       </button>
+      <a class="cta" href="#form">立即報名 →</a>
     </div>
     <p class="notice-open">表單若未關閉即尚有空位，歡迎踴躍報名</p>
   </header>
