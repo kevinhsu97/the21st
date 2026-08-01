@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>貳壹 The 21th ｜ 報名</title>
+<title>貳壹 The 21st ｜ 報名</title>
 <meta name="theme-color" content="#F0EEE9">
 <meta name="format-detection" content="telephone=no">
-<meta property="og:title" content="貳壹 The 21th">
+<meta property="og:title" content="貳壹 The 21st">
 <meta property="og:description" content="2026.08.29 一起慶祝這個 21 歲的夜晚">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -352,7 +352,7 @@
   <header class="hero" id="hero">
     <div class="kv-bg" id="kvBg"></div>
     <div class="eyebrow">You&rsquo;re Invited</div>
-    <h1 class="hero-title serif">貳壹 The 21th</h1>
+    <h1 class="hero-title serif">貳壹 The 21st</h1>
     <div class="hero-sub">許貴一生日會 · Birthday Party</div>
     <div class="rule"></div>
     <p class="meta"><strong>2026.08.29</strong> ｜ SAT ｜ <strong>18:00 – 20:00</strong></p>
@@ -379,7 +379,7 @@
         <div class="row"><div class="k">內 容</div><div class="v">佳餚饗宴 · 抽獎 · Q&amp;A 環節 · 切蛋糕 · 拍立得</div></div>
         <div class="row"><div class="k">費 用</div><div class="v">NTD 1,314<br><span style="color:var(--muted);font-size:13px">需提前匯款並備註真實姓名，附上匯款明細以便核實</span></div></div>
       </div>
-      <div class="gift"><span class="gift-t">限額加碼</span>報名即送 <b>［貳壹 The 21th 專屬紀念品］</b> 乙份</div>
+      <div class="gift"><span class="gift-t">限額加碼</span>報名即送 <b>［貳壹 The 21st 專屬紀念品］</b> 乙份</div>
     </section>
 
     <section class="compact">
@@ -557,7 +557,7 @@
   </div>
 
   <footer>
-    <div class="fs serif">貳壹 · The 21th</div>
+    <div class="fs serif">貳壹 · The 21st</div>
     <div class="fz">2026 · SEE YOU THERE</div>
   </footer>
 
@@ -579,13 +579,13 @@
     if(!btns.length) return;
     function download(){
       var ics=[
-        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The 21th//RSVP//TW','CALSCALE:GREGORIAN',
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//The 21st//RSVP//TW','CALSCALE:GREGORIAN',
         'BEGIN:VEVENT',
-        'UID:the21th-20260829@party',
+        'UID:the21st-20260829@party',
         'DTSTAMP:20260724T000000Z',
         'DTSTART:20260829T100000Z',   // 台北 18:00
         'DTEND:20260829T120000Z',     // 台北 20:00
-        'SUMMARY:貳壹 The 21th 生日會',
+        'SUMMARY:貳壹 The 21st 生日會',
         'LOCATION:H&D客家小館 新北市新莊區中隆里中港路618-1號',
         'DESCRIPTION:美食 · 抽獎 · Q&A · 切蛋糕 · 拍立得合照\\n費用 NTD 1314（台新銀行 812 · 28881021443027）',
         'END:VEVENT','END:VCALENDAR'
@@ -593,7 +593,7 @@
       var blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});
       var url=URL.createObjectURL(blob);
       var a=document.createElement('a');
-      a.href=url; a.download='貳壹The21th.ics';
+      a.href=url; a.download='貳壹The21st.ics';
       document.body.appendChild(a); a.click();
       document.body.removeChild(a);
       setTimeout(function(){URL.revokeObjectURL(url);},1500);
