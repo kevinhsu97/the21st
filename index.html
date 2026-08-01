@@ -79,7 +79,8 @@
     font-size:15px;letter-spacing:.14em;color:var(--muted);
   }
   .hero .meta strong{font-weight:500;color:var(--ink)}
-  .hero-btns{margin-top:38px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero-cta-wrap{display:inline-flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:38px}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:nowrap}
   .cta{
     display:inline-block;
     padding:15px 42px;
@@ -104,8 +105,9 @@
   .hero .cta-ghost:hover{background:#E6CD95;color:#2B2620}
   /* 頁首「限定周邊」小按鈕 */
   .hero-merch-btn{
-    display:inline-flex;align-items:center;gap:7px;margin-top:20px;
-    padding:9px 20px;background:rgba(219,188,130,.92);color:#2B2620;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    width:100%;box-sizing:border-box;
+    padding:11px 20px;background:rgba(219,188,130,.92);color:#2B2620;
     border-radius:40px;font-size:12.5px;letter-spacing:.12em;font-weight:500;
     text-decoration:none;transition:.3s;
   }
@@ -375,26 +377,20 @@
     <div class="hero-sub">許貴一生日會 · Birthday Party</div>
     <div class="rule"></div>
     <p class="meta"><strong>2026.08.29</strong> ｜ SAT ｜ <strong>18:00 – 20:00</strong></p>
-    <div class="hero-btns">
-      <button type="button" class="cta-ghost js-addcal" id="addCal">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="12" y1="12.5" x2="12" y2="17.5"/><line x1="9.5" y1="15" x2="14.5" y2="15"/></svg>
-        加入行事曆
-      </button>
-      <a class="cta" href="#form">立即報名 →</a>
+    <div class="hero-cta-wrap">
+      <div class="hero-btns">
+        <button type="button" class="cta-ghost js-addcal" id="addCal">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><line x1="12" y1="12.5" x2="12" y2="17.5"/><line x1="9.5" y1="15" x2="14.5" y2="15"/></svg>
+          加入行事曆
+        </button>
+        <a class="cta" href="#form">立即報名 →</a>
+      </div>
+      <a class="hero-merch-btn" href="#merch"><svg viewBox="0 0 24 24"><polyline points="20 12 20 21 4 21 4 12"/><rect x="2.5" y="7.5" width="19" height="4.5"/><line x1="12" y1="21" x2="12" y2="7.5"/><path d="M12 7.5H7.8a2.4 2.4 0 0 1 0-4.8C11 2.7 12 7.5 12 7.5z"/><path d="M12 7.5h4.2a2.4 2.4 0 0 0 0-4.8C13 2.7 12 7.5 12 7.5z"/></svg>貳壹 限定周邊 →</a>
     </div>
-    <a class="hero-merch-btn" href="#merch"><svg viewBox="0 0 24 24"><polyline points="20 12 20 21 4 21 4 12"/><rect x="2.5" y="7.5" width="19" height="4.5"/><line x1="12" y1="21" x2="12" y2="7.5"/><path d="M12 7.5H7.8a2.4 2.4 0 0 1 0-4.8C11 2.7 12 7.5 12 7.5z"/><path d="M12 7.5h4.2a2.4 2.4 0 0 0 0-4.8C13 2.7 12 7.5 12 7.5z"/></svg>貳壹 限定周邊 →</a>
     <p class="notice-open">表單若未關閉即尚有空位，歡迎踴躍報名</p>
   </header>
 
   <div class="wrap">
-
-    <section id="merch" class="merch">
-      <div class="section-tag">Limited Merch</div>
-      <a class="merch-banner" href="https://myship.7-11.com.tw/general/detail/GM2607313778262" target="_blank" rel="noopener">
-        <img src="merch-banner.jpg" alt="貳壹 The 21st 生日限定周邊 · 立即購買">
-      </a>
-      <p class="merch-cap">限定販售 <b>8/2 – 9/11</b> · 點擊圖片前往商品頁下單</p>
-    </section>
 
     <section>
       <div class="section-tag">Details</div>
@@ -565,6 +561,14 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="merch" class="merch">
+      <div class="section-tag">Limited Merch</div>
+      <a class="merch-banner" href="https://myship.7-11.com.tw/general/detail/GM2607313778262" target="_blank" rel="noopener">
+        <img src="merch-banner.jpg" alt="貳壹 The 21st 生日限定周邊 · 立即購買">
+      </a>
+      <p class="merch-cap">限定販售 <b>8/2 – 9/11</b> · 點擊圖片前往商品頁下單</p>
     </section>
 
     <section id="notes">
