@@ -102,6 +102,15 @@
   .hero .cta:hover{background:#DBBC82;border-color:#DBBC82;color:#241F19}
   .hero .cta-ghost{background:rgba(216,188,134,.22);border:1.5px solid #E6CD95;color:#F6E8C2;font-weight:500}
   .hero .cta-ghost:hover{background:#E6CD95;color:#2B2620}
+  /* 頁首「限定周邊」小按鈕 */
+  .hero-merch-btn{
+    display:inline-flex;align-items:center;gap:7px;margin-top:20px;
+    padding:9px 20px;background:rgba(219,188,130,.92);color:#2B2620;
+    border-radius:40px;font-size:12.5px;letter-spacing:.12em;font-weight:500;
+    text-decoration:none;transition:.3s;
+  }
+  .hero-merch-btn:hover{background:#fff;transform:translateY(-2px)}
+  .hero-merch-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .notice-open{
     margin-top:22px;font-size:12.5px;letter-spacing:.1em;color:var(--muted);
   }
@@ -120,6 +129,16 @@
     max-width:500px;margin:-26px auto 34px;text-align:center;
     color:var(--muted);font-size:14.5px;line-height:1.9;letter-spacing:.03em;
   }
+  /* 限定周邊橫幅 */
+  .merch{padding:48px 0 44px}
+  .merch-banner{
+    display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    transition:transform .35s ease;
+  }
+  .merch-banner img{width:100%;display:block}
+  .merch-banner:hover{transform:translateY(-3px)}
+  .merch-cap{text-align:center;margin-top:15px;font-size:13px;color:var(--muted);letter-spacing:.05em}
+  .merch-cap b{color:var(--gold);font-weight:600}
 
   /* Info card */
   .card{
@@ -363,10 +382,19 @@
       </button>
       <a class="cta" href="#form">立即報名 →</a>
     </div>
+    <a class="hero-merch-btn" href="#merch"><svg viewBox="0 0 24 24"><polyline points="20 12 20 21 4 21 4 12"/><rect x="2.5" y="7.5" width="19" height="4.5"/><line x1="12" y1="21" x2="12" y2="7.5"/><path d="M12 7.5H7.8a2.4 2.4 0 0 1 0-4.8C11 2.7 12 7.5 12 7.5z"/><path d="M12 7.5h4.2a2.4 2.4 0 0 0 0-4.8C13 2.7 12 7.5 12 7.5z"/></svg>貳壹 限定周邊 →</a>
     <p class="notice-open">表單若未關閉即尚有空位，歡迎踴躍報名</p>
   </header>
 
   <div class="wrap">
+
+    <section id="merch" class="merch">
+      <div class="section-tag">Limited Merch</div>
+      <a class="merch-banner" href="https://myship.7-11.com.tw/general/detail/GM2607313778262" target="_blank" rel="noopener">
+        <img src="merch-banner.jpg" alt="貳壹 The 21st 生日限定周邊 · 立即購買">
+      </a>
+      <p class="merch-cap">限定販售 <b>8/2 – 9/11</b> · 點擊圖片前往商品頁下單</p>
+    </section>
 
     <section>
       <div class="section-tag">Details</div>
