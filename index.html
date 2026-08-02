@@ -141,6 +141,33 @@
   .merch-banner:hover{transform:translateY(-3px)}
   .merch-cap{text-align:center;margin-top:15px;font-size:13px;color:var(--muted);letter-spacing:.05em}
   .merch-cap b{color:var(--gold);font-weight:600}
+  .buy-wrap{text-align:center;margin-top:20px}
+  .buy-btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:16px 52px;background:#C7A469;color:#2B2620;
+    border-radius:40px;font-size:15px;letter-spacing:.18em;font-weight:600;
+    text-decoration:none;transition:.35s ease;
+  }
+  .buy-btn:hover{background:#DBBC82;transform:translateY(-2px)}
+  .buy-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .merch-detail{max-width:600px;margin:34px auto 0}
+  .md-title{text-align:center;font-size:18px;font-weight:600;color:var(--ink);letter-spacing:.04em;margin-bottom:22px}
+  .md-intro{text-align:center;color:var(--muted);font-size:14px;line-height:2;margin:0 0 16px}
+  .md-bonus{font-size:13.5px;color:var(--gold);font-weight:500;margin-top:12px;line-height:1.85}
+  .md-h{font-size:16px;letter-spacing:.06em;color:var(--ink);font-weight:600;
+    margin:30px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+  .md-item{margin-bottom:20px}
+  .md-item-t{font-size:14.5px;font-weight:600;color:var(--gold);margin-bottom:8px}
+  .md-item ul,.md-notes{list-style:none;padding:0;margin:0}
+  .md-item li{font-size:13.5px;color:var(--muted);line-height:1.9}
+  .md-item li b{color:var(--ink);font-weight:500}
+  .md-notes li{font-size:13px;color:var(--muted);line-height:1.9;padding-left:16px;position:relative;margin-bottom:9px}
+  .md-notes li::before{content:"•";position:absolute;left:3px;color:var(--gold)}
+  .md-notes a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft)}
+  .md-notes-link{text-align:center;margin-top:22px;font-size:13.5px}
+  .md-notes-link a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-soft);letter-spacing:.06em}
+  .md-notes-link a:hover{color:var(--ink)}
+  .buy-notes-list{max-width:600px;margin:0 auto}
 
   /* Info card */
   .card{
@@ -565,10 +592,43 @@
 
     <section id="merch" class="merch">
       <div class="section-tag">Limited Merch</div>
-      <a class="merch-banner" href="https://myship.7-11.com.tw/general/detail/GM2607313778262" target="_blank" rel="noopener">
+      <a class="merch-banner" href="https://myship.711.com.tw/cart/confirm/GM2607313776944" target="_blank" rel="noopener">
         <img src="merch-banner.jpg" alt="貳壹 The 21st 生日限定周邊 · 立即購買">
       </a>
-      <p class="merch-cap">限定販售 <b>8/2 – 9/11</b> · 點擊圖片前往商品頁下單</p>
+      <p class="merch-cap">限定販售 <b>8/2 – 9/11</b> · 點擊圖片或下方按鈕立即下單</p>
+
+      <div class="merch-detail">
+        <h3 class="md-title">【貳壹 The 21st】生日專屬周邊</h3>
+        <p class="md-intro">專屬於 21 歲的特別紀念<br>本次將這份心意實體化<br>獻給一直在支持、關注貴一的大家</p>
+        <p class="md-intro">無論生日會當天有沒有來到現場<br>都希望這份專屬的禮物能夠一直陪伴著你 ❤️‍🔥</p>
+
+        <h3 class="md-h">📦 商品內容與規格</h3>
+        <div class="md-item">
+          <div class="md-item-t">｜貳壹限定海報 × 1 張</div>
+          <ul>
+            <li>尺寸：A3（42 × 29.7）</li>
+            <li>材質：高質感霧面 250G 銅西紙</li>
+            <li>說明：貳壹專屬視覺設計，適合收藏或裱框裝飾</li>
+          </ul>
+        </div>
+        <div class="md-item">
+          <div class="md-item-t">｜貳壹限定小卡 × 4 張 ＋ 貳壹隱藏版小卡 × 1 張 ✨</div>
+          <ul>
+            <li>尺寸：5.5 x 8.5 cm（一般專卡大小）</li>
+            <li>材質：PVC</li>
+            <li>說明：收錄 5 款不同風格的獨家照片</li>
+          </ul>
+          <p class="md-bonus">✨ 特別加碼：專屬本次購買典藏組才能獲得的隱藏版小卡</p>
+        </div>
+
+        <div class="buy-wrap">
+          <a class="buy-btn" href="https://myship.711.com.tw/cart/confirm/GM2607313776944" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.5 3h2l2.2 12.3a1.5 1.5 0 0 0 1.5 1.2h9.1a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+            立即前往下單
+          </a>
+        </div>
+        <p class="md-notes-link"><a href="#buy-notes">⚠️ 購買前請詳閱「周邊購買須知」→</a></p>
+      </div>
     </section>
 
     <section id="notes">
@@ -583,6 +643,16 @@
         <li>若遇非人為不可控因素取消活動，將全額退款或轉移他處進行</li>
         <li>主辦單位保留隨時修改、變更、暫停或終止本活動內容之權利，並以公告為準</li>
         <li>若有其他未盡事宜，悉依主辦單位相關規定或解釋</li>
+      </ul>
+    </section>
+
+    <section id="buy-notes">
+      <div class="section-tag">Purchase Notes</div>
+      <h2 class="section-title">周邊購買須知</h2>
+      <ul class="md-notes buy-notes-list">
+        <li>出貨時皆會妥善包裝，盡力保護商品完好，但物流運送過程中仍可能有些微碰撞，完美主義者請斟酌下單。</li>
+        <li>為保障雙方權益，拆封包裹時請務必全程錄影。如有漏發或嚴重瑕疵，請於取件後 3 日內附上開箱影片，聯繫官方 LINE <a href="https://lin.ee/W6SzWow" target="_blank" rel="noopener">@493zoevi</a> 處理。</li>
+        <li>請務必填寫與身分證相符的真實姓名，以免超商核對身分時無法順利取件。</li>
       </ul>
     </section>
 
