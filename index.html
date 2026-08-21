@@ -103,15 +103,16 @@
   .hero .cta:hover{background:#DBBC82;border-color:#DBBC82;color:#241F19}
   .hero .cta-ghost{background:rgba(216,188,134,.22);border:1.5px solid #E6CD95;color:#F6E8C2;font-weight:500}
   .hero .cta-ghost:hover{background:#E6CD95;color:#2B2620}
-  /* 頁首「限定周邊」小按鈕 */
+  /* 頁首「限定周邊」小按鈕（刻意淡化，避免搶走主活動焦點） */
   .hero-merch-btn{
-    display:flex;align-items:center;justify-content:center;gap:7px;
+    display:flex;align-items:center;justify-content:center;gap:6px;
     width:100%;box-sizing:border-box;
-    padding:11px 20px;background:rgba(219,188,130,.92);color:#2B2620;
-    border-radius:40px;font-size:12.5px;letter-spacing:.12em;font-weight:500;
+    padding:10px 20px;background:rgba(216,188,134,.14);color:#EDE3C8;
+    border:1px solid rgba(230,205,149,.55);
+    border-radius:40px;font-size:12px;letter-spacing:.1em;font-weight:400;
     text-decoration:none;transition:.3s;
   }
-  .hero-merch-btn:hover{background:#fff;transform:translateY(-2px)}
+  .hero-merch-btn:hover{background:rgba(216,188,134,.24);border-color:#E6CD95;color:#fff}
   .hero-merch-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .notice-open{
     margin-top:22px;font-size:12.5px;letter-spacing:.1em;color:var(--muted);
@@ -416,6 +417,7 @@
         <a class="cta" href="#form">立即報名 →</a>
       </div>
       <a class="hero-merch-btn" href="#merch"><svg viewBox="0 0 24 24"><polyline points="20 12 20 21 4 21 4 12"/><rect x="2.5" y="7.5" width="19" height="4.5"/><line x1="12" y1="21" x2="12" y2="7.5"/><path d="M12 7.5H7.8a2.4 2.4 0 0 1 0-4.8C11 2.7 12 7.5 12 7.5z"/><path d="M12 7.5h4.2a2.4 2.4 0 0 0 0-4.8C13 2.7 12 7.5 12 7.5z"/></svg>貳壹 限定周邊 →</a>
+      <a class="hero-merch-btn" href="#photobook"><svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="13" rx="2.2"/><circle cx="12" cy="13" r="3.6"/><path d="M8 6.5 9.3 4h5.4L16 6.5"/></svg>貳壹獨家線上寫真 →</a>
     </div>
     <p class="notice-open">表單若未關閉即尚有空位，歡迎踴躍報名</p>
   </header>
@@ -638,6 +640,46 @@
       </div>
     </section>
 
+    <section id="photobook" class="merch">
+      <div class="section-tag">Online Photobook</div>
+      <a class="merch-banner" href="https://linktoma.to/store/product/6632266683056128" target="_blank" rel="noopener">
+        <img src="photobook-banner.jpg" alt="貳壹 The 21st 生日限定獨家線上寫真 · 立即購買"
+             onerror="this.style.display='none';document.getElementById('pbPh').style.display='flex'">
+        <div id="pbPh" class="poster-ph" style="display:none">
+          <div class="ico">📷</div>
+          <div class="t">線上寫真 BANNER 位置</div>
+          <div class="s">把圖存成 <code>photobook-banner.jpg</code><br>放進本資料夾即自動顯示</div>
+        </div>
+      </a>
+      <p class="merch-cap"><b>8/26 線上獨家開售</b> · 點擊圖片或下方按鈕前往購買</p>
+
+      <div class="merch-detail">
+        <h3 class="md-title">【貳壹 The 21st】生日限定獨家線上寫真✨</h3>
+        <p class="md-intro">21 歲的這一天，值得留下比現場更多一點的畫面<br>這是「貳壹 The 21st」的獨家寫真企劃<br>不在活動現場公開，只有這裡看得到 ❤️‍🔥</p>
+        <p class="md-intro">精心拍攝的主題寫真，一次收藏這次最完整的視覺記錄 🎂</p>
+        <p class="md-bonus" style="text-align:center">僅於本波販售期間開放購買，數量有限<br>售完不再追加，錯過這次就沒有下一次 ✨</p>
+
+        <h3 class="md-h">📦 商品內容與規格</h3>
+        <div class="md-item">
+          <div class="md-item-t">｜貳壹 The 21st 線上寫真</div>
+          <ul>
+            <li>內容：獨家生日主題寫真，共 <b>30 張</b></li>
+            <li>形式：數位內容，購買完成後以線上連結提供</li>
+            <li>販售：8/26 線上獨家開售，數量有限、售完不再追加</li>
+          </ul>
+        </div>
+
+        <div class="buy-wrap">
+          <a class="buy-btn" href="https://linktoma.to/store/product/6632266683056128" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="3" y="6.5" width="18" height="13" rx="2.2"/><circle cx="12" cy="13" r="3.6"/><path d="M8 6.5 9.3 4h5.4L16 6.5"/></svg>
+            前往購買線上寫真
+          </a>
+        </div>
+
+        <p class="md-notes-link"><a href="#photobook-notes">⚠️ 購買前請詳閱「線上寫真購買須知」→</a></p>
+      </div>
+    </section>
+
     <section id="notes">
       <div class="section-tag">Please Note</div>
       <h2 class="section-title">注意事項</h2>
@@ -660,6 +702,16 @@
         <li>出貨時皆會妥善包裝，盡力保護商品完好，但物流運送過程中仍可能有些微碰撞，完美主義者請斟酌下單。</li>
         <li>為保障雙方權益，拆封包裹時請務必全程錄影。如有漏發或嚴重瑕疵，請於取件後 3 日內附上開箱影片，聯繫官方 LINE <a href="https://lin.ee/W6SzWow" target="_blank" rel="noopener">@493zoevi</a> 處理。</li>
         <li>請務必填寫與身分證相符的真實姓名，以免超商核對身分時無法順利取件。</li>
+      </ul>
+    </section>
+
+    <section id="photobook-notes">
+      <div class="section-tag">Purchase Notes</div>
+      <h2 class="section-title">線上寫真購買須知</h2>
+      <ul class="md-notes buy-notes-list">
+        <li>本商品為數位內容，購買完成後將以線上連結方式提供，恕不提供實體寄送</li>
+        <li>數位內容一經開通即無法退換，請確認後再購買</li>
+        <li>如有任何疑問，請透過官方 LINE <a href="https://lin.ee/W6SzWow" target="_blank" rel="noopener">@493zoevi</a> 與我們聯繫</li>
       </ul>
     </section>
 
